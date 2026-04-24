@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz JS</title>
+</head>
+<body>
+
+<button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+<script>
+const QUESTIONS = [
+  ["Quelle est la capitale du Maroc ?", "Rabat"],
+  ["Combien font 5 * 2 ?", "10"],
+  ["Langage du web côté client ?", "JavaScript"]
+];
+
+function lancerQuiz() {
+  let score = 0;
+
+  for (let i = 0; i < QUESTIONS.length; i++) {
+    let question = QUESTIONS[i][0];
+    let bonneReponse = QUESTIONS[i][1];
+
+    let reponse = prompt(question);
+
+    if (reponse !== null && reponse.toLowerCase() === bonneReponse.toLowerCase()) {
+      alert("Réponse juste");
+      score++;
+    } else {
+      alert("Réponse fausse");
+    }
+  }
+
+  alert("Score : " + score + "/" + QUESTIONS.length);
+}
+</script>
+
+</body>
+</html>
